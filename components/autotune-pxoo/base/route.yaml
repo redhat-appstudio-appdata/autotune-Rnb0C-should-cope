@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: autotune-pxoo
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: autotune-pxoo
+    app.kubernetes.io/part-of: autotune
+  name: autotune-pxoo
+  namespace: red-hat-acm-tenant
+spec:
+  path: /
+  port:
+    targetPort: 8081
+  to:
+    kind: Service
+    name: autotune-pxoo
+    weight: null
+status: {}
